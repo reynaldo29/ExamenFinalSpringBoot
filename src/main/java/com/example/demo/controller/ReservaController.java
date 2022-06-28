@@ -57,7 +57,7 @@ public class ReservaController {
 			reserva = new Reserva();
 			model.addAttribute("reserva",reserva);
 			model.addAttribute("btn","Crear Reserva");
-			return "destinoForm";
+			return "reservaForm";
 		}else {
 		reservaService.guardar(reserva);
 		return "redirect:/reservas/listar";

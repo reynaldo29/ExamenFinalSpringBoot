@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,18 +24,14 @@ public class Reserva {
 		@NotNull
 		private String lugar_partida;
 		@NotNull
-		@Column(name = "lugar_destino")
 		private String lugar_destino;
 		@NotNull
-		@Temporal(TemporalType.DATE)//CAMPO FECHA
-		private Date dia_partida;
+		private String dia_partida;
 		@NotNull
-		@Temporal(TemporalType.DATE)//CAMPO FECHA
-		private Date dia_llegada;
+		private String dia_llegada;
 		@NotNull
 		private int boleto;
 		@NotNull
-		@Column(name = "nombre_cliente")
 		private String nombre_cliente;
 		@NotNull
 		private String placabus;
@@ -57,16 +55,16 @@ public class Reserva {
 		public void setLugar_destino(String lugar_destino) {
 			this.lugar_destino = lugar_destino;
 		}
-		public Date getDia_partida() {
+		public String getDia_partida() {
 			return dia_partida;
 		}
-		public void setDia_partida(Date dia_partida) {
+		public void setDia_partida(String dia_partida) {
 			this.dia_partida = dia_partida;
 		}
-		public Date getDia_llegada() {
+		public String getDia_llegada() {
 			return dia_llegada;
 		}
-		public void setDia_llegada(Date dia_llegada) {
+		public void setDia_llegada(String dia_llegada) {
 			this.dia_llegada = dia_llegada;
 		}
 		public int getBoleto() {
@@ -93,7 +91,6 @@ public class Reserva {
 		public void setTotal(double total) {
 			this.total = total;
 		}
-		
 		@Override
 		public String toString() {
 			return "Reserva [id=" + id + ", lugar_partida=" + lugar_partida + ", lugar_destino=" + lugar_destino
@@ -102,8 +99,6 @@ public class Reserva {
 		}
 		
 		
-
-	
 	
 		
 }

@@ -12,8 +12,8 @@ import com.example.demo.repository.IReserva;
 public class ReservaService {
     @Autowired
     private IReserva iReserva;
-    public void guardar(Reserva destino) {
-        iReserva.save(destino);
+    public void guardar(Reserva reserva) {
+        iReserva.save(reserva);
     }
     public List<Reserva> listar(){
         return iReserva.findAll();
